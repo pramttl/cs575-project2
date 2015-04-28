@@ -94,7 +94,7 @@ main( int argc, char *argv[ ] ) {
 #ifdef COARSE
     #ifdef STATIC
         #pragma omp parallel for schedule(static)
-    #elif DYNAMIC
+    #else
         #pragma omp parallel for schedule(dynamic)
     #endif
 #endif
@@ -109,7 +109,7 @@ main( int argc, char *argv[ ] ) {
 #ifdef FINE
     #ifdef STATIC
             #pragma omp parallel for reduction(+:fx,fy,fz) schedule(static)
-    #elif DYNAMIC
+    #else
             #pragma omp parallel for reduction(+:fx,fy,fz) schedule(dynamic)
     #endif
 #endif
