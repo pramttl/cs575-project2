@@ -108,9 +108,9 @@ main( int argc, char *argv[ ] ) {
 
 #ifdef FINE
     #ifdef STATIC
-            #pragma omp parallel for schedule(static)
+            #pragma omp parallel for reduction(+:fx,fy,fz) schedule(static)
     #elif DYNAMIC
-            #pragma omp parallel for schedule(dynamic)
+            #pragma omp parallel for reduction(+:fx,fy,fz) schedule(dynamic)
     #endif
 #endif
 
